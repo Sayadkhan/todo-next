@@ -7,9 +7,7 @@ import { HiPencilAlt } from "react-icons/hi";
 import style from "../app/scss/todoList.module.scss";
 import axios from "axios";
 
-interface todoStateProps {
-  todos: any;
-}
+interface todoStateProps {}
 
 const TodoList: React.FC<todoStateProps> = () => {
   const [tasks, setTasks] = useState([]);
