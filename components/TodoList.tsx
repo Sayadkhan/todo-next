@@ -41,7 +41,7 @@ const TodoList: React.FC<todoStateProps> = () => {
           </div>
           {/* buttopn edit and remove */}
           <div className={style.buttonDiv}>
-            <RemoveBtn />
+            <RemoveBtn id={task._id} />
             <div>
               <Link href={`/editTodo/${task._id}`}>
                 <HiPencilAlt size={24} />

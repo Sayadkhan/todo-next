@@ -29,7 +29,7 @@ import connetMongoDB from "@/libs/mongobd";
 //   }
 // }
 
-export async function PUT(req: Request, { params }: { params: any }) {
+export async function PATCH(req: Request, { params }: { params: any }) {
   const { id } = params;
   const { newTitle: title, newDescription: description } = await req.json();
 
