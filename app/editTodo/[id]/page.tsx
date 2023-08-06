@@ -16,9 +16,12 @@ const EditTopic: React.FC<todoStateProps> = ({ params }) => {
   useEffect(() => {
     const getTodos = async () => {
       try {
-        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/todos/${id}`, {
-          cache: "no-store",
-        });
+        const res = await fetch(
+          `${process.env.NEXT_PUBLIC_URL}/api/todos/${id}`,
+          {
+            cache: "no-store",
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to fetch task");

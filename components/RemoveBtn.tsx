@@ -15,9 +15,12 @@ const RemoveBtn: React.FC<todoStateProps> = ({ id }) => {
 
   const removeTask = async () => {
     {
-      const res = await fetch(`${process.env.NEXTAUTH_URL}?id=${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_URL}/api/todos?id=${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       if (res.ok) {
         console.log("task remove succefully");
         router.push("/deleteTask");

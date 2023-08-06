@@ -23,13 +23,16 @@ const EditTopicForm: React.FC<todoStateProps> = ({ data, id }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`${process.env.NEXTAUTH_URL}/${data?.todo._id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ newTitle, newDescription }),
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_URL}/${data?.todo._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({ newTitle, newDescription }),
+        }
+      );
 
       if (!res.ok) {
         throw new Error("Failed to update topic");
