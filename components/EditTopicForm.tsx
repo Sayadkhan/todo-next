@@ -23,7 +23,7 @@ const EditTopicForm: React.FC<todoStateProps> = ({ data, id }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(`http://localhost:3000/todos/${data?.todo._id}`, {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/${data?.todo._id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json",

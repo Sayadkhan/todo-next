@@ -16,7 +16,7 @@ const EditTopic: React.FC<todoStateProps> = ({ params }) => {
   useEffect(() => {
     const getTodos = async () => {
       try {
-        const res = await fetch(`http://localhost:3000/api/todos/${id}`, {
+        const res = await fetch(`${process.env.NEXTAUTH_URL}/api/todos/${id}`, {
           cache: "no-store",
         });
 

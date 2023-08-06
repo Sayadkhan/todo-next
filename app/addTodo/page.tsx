@@ -17,7 +17,7 @@ const AddTodo = () => {
       return;
     }
     try {
-      const res = await fetch("http://localhost:3000/api/todos", {
+      const res = await fetch(`${process.env.NEXTAUTH_URL}/api/todos`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
