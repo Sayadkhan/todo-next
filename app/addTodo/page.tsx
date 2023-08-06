@@ -17,9 +17,8 @@ const AddTodo = () => {
       return;
     }
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/todos`, {
+      const res = await fetch(`/api/todos`, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-type": "application/json",
         },
