@@ -19,7 +19,7 @@ const EditTopicForm: React.FC<todoStateProps> = ({ data, id }) => {
 
   const [newDescription, setNewDescription] = useState(data?.todo.description);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
