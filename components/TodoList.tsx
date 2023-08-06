@@ -7,10 +7,12 @@ import { HiPencilAlt } from "react-icons/hi";
 import style from "../app/scss/todoList.module.scss";
 import axios from "axios";
 
-interface todoStateProps {}
+interface todoStateProps {
+  todos: any;
+}
 
 const TodoList: React.FC<todoStateProps> = () => {
-  const [tasks, setTasks] = useState({});
+  const [tasks, setTasks] = useState([]);
   console.log(tasks);
   useEffect(() => {
     const getTodos = async () => {
@@ -33,7 +35,7 @@ const TodoList: React.FC<todoStateProps> = () => {
 
   return (
     <>
-      {tasks?.todos?.map((task: any) => (
+      {tasks?.map((task: any) => (
         <div key={task.id} className={style.container_div}>
           <div>
             <h2 className={style.todoTitle}>{task?.title}</h2>

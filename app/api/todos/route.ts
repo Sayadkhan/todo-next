@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 export async function GET() {
   await connetMongoDB();
   const todos = await Todo.find();
-  return NextResponse.json({ todos }, { status: 201 });
+  return NextResponse.json(todos, { status: 201 });
 }
 
 export async function DELETE(req: NextRequest) {
