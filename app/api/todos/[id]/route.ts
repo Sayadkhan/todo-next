@@ -34,12 +34,18 @@ export async function PATCH(req: Request, { params }: { params: any }) {
   const { newTitle: title, newDescription: description } = await req.json();
 
   await connetMongoDB();
+  req.headers.set("Access-Control-Allow-Origin", "*");
+  req.headers.set("Access-Control-Allow-Methods", "POST");
+  req.headers.set("Access-Control-Allow-Headers", "Content-Type");
   await Todo.findByIdAndUpdate(id, { title, description });
   return NextResponse.json({ message: "Topic updated" }, { status: 200 });
 }
 
 export async function GET(req: Request, { params }: { params: any }) {
   const { id } = params;
+  req.headers.set("Access-Control-Allow-Origin", "*");
+  req.headers.set("Access-Control-Allow-Methods", "POST");
+  req.headers.set("Access-Control-Allow-Headers", "Content-Type");
   await connetMongoDB();
   const todo = await Todo.findOne({ _id: id });
   return NextResponse.json({ todo }, { status: 200 });
