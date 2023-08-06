@@ -45,17 +45,18 @@ const AddTodo = () => {
         type="text"
         placeholder="Your Task"
       />
-      <input
-        className={style.title_input}
+      <textarea
+        className={style.title_input_description}
         onChange={(e) => setDescriptiom(e.target.value)}
         value={description}
         title="title"
-        type="text"
         placeholder="Write description"
       />
-      <button type="submit" className={style.addTopicBtn}>
-        Add Topic
-      </button>
+      <div className={style.button_div}>
+        <button type="submit" className={style.addTopicBtn}>
+          Add Topic
+        </button>
+      </div>
     </form>
   );
 };

@@ -1,0 +1,19 @@
+.delete {
+  display: flex;
+  flex-direction: column;
+  color: brown;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  gap: 20px;
+}
+
+.gotohome {
+  text-decoration: none;
+  background-color: black;
+  padding: 0.7rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: aliceblue;
+}

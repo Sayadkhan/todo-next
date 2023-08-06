@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
+  height: 5rem;
   padding-left: 2rem; /* 32px */
   padding-right: 2rem; /* 32px */
   padding-top: 0.75rem; /* 12px */
@@ -18,7 +19,7 @@
 
 .addToDo {
   background-color: rgb(255 255 255);
-  padding: 0.5rem;
+  padding: 1rem;
   text-decoration: none;
   color: rgb(30 41 59);
 }
