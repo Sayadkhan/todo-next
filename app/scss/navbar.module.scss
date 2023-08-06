@@ -1,12 +1,24 @@
 .header {
-  width: 50%;
-  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
   margin: 0 auto;
-  padding: 1rem;
-  margin-bottom: 3rem;
-  background-color: aquamarine;
+  padding-left: 2rem; /* 32px */
+  padding-right: 2rem; /* 32px */
+  padding-top: 0.75rem; /* 12px */
+  padding-bottom: 0.75rem; /* 12px */
+  background-color: rgb(30 41 59);
+}
+
+.navItem {
+  color: rgb(255 255 255);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.addToDo {
+  background-color: rgb(255 255 255);
+  padding: 0.5rem;
+  text-decoration: none;
+  color: rgb(30 41 59);
 }

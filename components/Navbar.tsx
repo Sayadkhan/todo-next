@@ -5,8 +5,12 @@ import style from "../app/scss/navbar.module.scss";
 const Navbar = () => {
   return (
     <nav className={style.header}>
-      <Link href={"/"}>Daily Doze</Link>
-      <Link href={"/addTodo"}>Add Task</Link>
+      <Link className={style.navItem} href={"/"}>
+        Daily Doze
+      </Link>
+      <Link className={style.addToDo} href={"/addTodo"}>
+        Add Task
+      </Link>
     </nav>
   );
 };
