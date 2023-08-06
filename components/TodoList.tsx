@@ -1,27 +1,55 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
 import style from "../app/scss/todoList.module.scss";
+import axios from "axios";
 
-const TodoList = () => {
+interface todoStateProps {}
+
+const TodoList: React.FC<todoStateProps> = () => {
+  const [tasks, setTasks] = useState({});
+  console.log(tasks);
+  useEffect(() => {
+    const getTodos = async () => {
+      try {
+        const res = await fetch("http://localhost:3000/api/todos", {
+          cache: "no-store",
+        });
+
+        if (!res.ok) {
+          throw new Error("Failed to fetch task");
+        }
+
+        return setTasks(await res.json());
+      } catch (error) {
+        console.log("Error Loading Tasks", error);
+      }
+    };
+    getTodos();
+  }, []);
+
   return (
     <>
-      <div className={style.container_div}>
-        <div>
-          <h2 className={style.todoTitle}>Title</h2>
-          <div>Description</div>
-        </div>
-        {/* buttopn edit and remove */}
-        <div className={style.buttonDiv}>
-          <RemoveBtn />
+      {tasks?.todos?.map((task: any) => (
+        <div key={task.id} className={style.container_div}>
           <div>
-            <Link href={"/editTodo/id"}>
-              <HiPencilAlt size={24} />
-            </Link>
+            <h2 className={style.todoTitle}>{task?.title}</h2>
+            <div>{task?.description}</div>
+          </div>
+          {/* buttopn edit and remove */}
+          <div className={style.buttonDiv}>
+            <RemoveBtn />
+            <div>
+              <Link href={`/editTodo/${task._id}`}>
+                <HiPencilAlt size={24} />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
     </>
   );
 };
